@@ -1,6 +1,6 @@
 <?php
-
-use Illuminate\Support\Facades\Route;
+require "google.php";
+use us\google;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
- var_dump(get_included_files());
- return view('welcome');
+Illuminate\Support\Facades\Route::get('/', function () {
+ //var_dump(get_included_files());
+ 	$google = new google();
+	echo $google->sayfounder();
+	return view('welcome');
 });
